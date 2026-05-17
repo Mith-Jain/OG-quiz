@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Challenge</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; max-width: 600px; margin: 40px auto; padding: 20px; background: #f4f7f6; color: #333; }
+        .card { background: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); margin-bottom: 20px; }
+        .hidden { display: none; }
+        button { width: 100%; padding: 12px; margin: 10px 0; border-radius: 4px; border: 1px solid #ccc; font-size: 16px; box-sizing: border-box; font-weight: bold; cursor: pointer;}
+        .option-btn { background: #f1f2f6; color: black; font-weight: normal; text-align: left; margin: 5px 0; border: 1px solid #ced6e0; }
+        .option-btn:hover { background: #dfe4ea; }
+        .option-btn.selected { background: #2ed573; color: white; border-color: #26af5f; }
+        #next-btn { background: #70a1ff; color: white; border: none; }
+        #next-btn:hover { background: #1e90ff; }
+        .score-display { font-size: 24px; color: #2ed573; font-weight: bold; text-align: center; margin: 20px 0; }
+    </style>
+</head>
+<body>
+
+    <h1 style="text-align: center; color: #2f3542;">⚡ Quiz Challenge</h1>
+
+    <div id="quiz-card" class="card">
+        <h3 id="question-text">Loading question...</h3>
+        <div id="options-container"></div>
+        <button id="next-btn" onclick="nextQuestion()" style="margin-top: 15px;">Next Question</button>
+    </div>
+
+    <div id="result-card" class="card hidden">
+        <h2 style="text-align: center;">Quiz Completed! 🏁</h2>
+        <div class="score-display" id="final-score">Your Score: 0/0</div>
+        <p style="text-align: center; color: #777;" id="feedback-text"></p>
+        <button onclick="location.reload()" style="background:#5352ed; color:white; border:none;">Try Again</button>
+    </div>
+
+    <script>
+        // 📋 INPUT YOUR QUESTIONS HERE DIRECTLY
+        // 'options' is a list, 'correct' is the index of the right answer (0, 1, 2, or 3)
+        const QUESTIONS = [
+            {
+                "question": "What is the capital of France?",
+                "options": ["London", "Berlin", "Paris", "Madrid"],
+                "correct": 2
+            },
+            {
+                "question": "Which planet is known as the Red Planet?",
+                "options": ["Earth", "Mars", "Jupiter", "Saturn"],
+                "correct": 1
+            },
+            {
+                "question": "What is 5 + 7?",
+                "options": ["10", "11", "12", "13"],
+                "correct": 2
+            }
+        ];
+
+        let currentQuestionIndex = 0;
+        let score = 0;
+        let selectedOptionIndex = null;
+
+        function showQuestion() {
+            selectedOptionIndex = null;
+            const q = QUESTIONS[currentQuestionIndex];
+            document.getElementById('question-text').innerText = `Question ${currentQuestionIndex + 1} of ${QUESTIONS.length}: ${q.question}`;
+            
+            const container = document.getElementById('options-container');
+            container.innerHTML = "";
+            
+            q.options.forEach((option, index) => {
+                const btn = document.createElement('button');
+                btn.className = 'option-btn';
+                btn.innerText = option;
+                btn.onclick = () => selectOption(index, btn);
+                container.appendChild(btn);
+            });
+
+            const nextBtn = document.getElementById('next-btn');
+            if (currentQuestionIndex === QUESTIONS.length - 1) {
+                nextBtn.innerText = "See My Score";
+                nextBtn.style.background = "#2ed573";
+            } else {
+                nextBtn.innerText = "Next Question";
+                nextBtn.style.background = "#70a1ff";
+            }
+        }
+
+        function selectOption(index, element) {
+            selectedOptionIndex = index;
+            document.querySelectorAll('.option-btn').forEach(btn => btn.classList.remove('selected'));
+            element.classList.add('selected');
+        }
+
+        function nextQuestion() {
+            if (selectedOptionIndex === null) {
+                return alert("Please pick an option first!");
+            }
+            
+            // Check if selected answer matches the correct index
+            if (selectedOptionIndex === QUESTIONS[currentQuestionIndex].correct) {
+                score++;
+            }
+            
+            if (currentQuestionIndex < QUESTIONS.length - 1) {
+                currentQuestionIndex++;
+                showQuestion();
+            } else {
+                showResults();
+            }
+        }
+
+        function showResults() {
+            document.getElementById('quiz-card').classList.add('hidden');
+            document.getElementById('result-card').classList.remove('hidden');
+            
+            document.getElementById('final-score').innerText = `Your Score: ${score} / ${QUESTIONS.length}`;
+            
+            // Fun dynamic feedback message based on performance
+            const pct = score / QUESTIONS.length;
+            let feedback = "Better luck next time!";
+            if (pct === 1) feedback = "Absolute Genius! Perfect Score! 🏆";
+            else if (pct >= 0.5) feedback = "Great job! You know your stuff. 👍";
+            
+            document.getElementById('feedback-text').innerText = feedback;
+        }
+
+        // Initialize the first question on page load
+        showQuestion();
+    </script>
+</body>
+</html>
