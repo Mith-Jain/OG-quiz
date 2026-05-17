@@ -38,22 +38,157 @@
         // 📋 INPUT YOUR QUESTIONS HERE DIRECTLY
         // 'options' is a list, 'correct' is the index of the right answer (0, 1, 2, or 3)
         const QUESTIONS = [
-            {
-                "question": "What is the capital of France?",
-                "options": ["London", "Berlin", "Paris", "Madrid"],
-                "correct": 2
-            },
-            {
-                "question": "Which planet is known as the Red Planet?",
-                "options": ["Earth", "Mars", "Jupiter", "Saturn"],
-                "correct": 1
-            },
-            {
-                "question": "What is 5 + 7?",
-                "options": ["10", "11", "12", "13"],
-                "correct": 2
-            }
-        ];
+    {
+        "question": "Who said 'बोलो पार्श्वनाथ भगवान की जय' as their first message in the group?",
+        "options": ["Mith Jain", "Kritang CSE", "Vidit Jain", "So Bo"],
+        "correct": 2
+    },
+    {
+        "question": "Who responded with 'जय जिनेन्द्र' as their first message?",
+        "options": ["Vidit Jain", "Mahavir Khajanchi", "So Bo", "Rishi Dalal"],
+        "correct": 2
+    },
+    {
+        "question": "Who made the joke '100 pakka... In binary' when promising to sponsor 100 rupees?",
+        "options": ["Mith Jain", "Kritang CSE", "Prinal Jain", "Vidit Jain"],
+        "correct": 3
+    },
+    {
+        "question": "Who said 'Har ek dost kamina hota hai😞' after being voted to be removed from the group?",
+        "options": ["Vidit Jain", "Kritang CSE", "Prinal Jain", "Vansh Jain"],
+        "correct": 2
+    },
+    {
+        "question": "Who made the funny comment 'freshies ke saamne yeh sab ??? isse achha muh kaala karwa deta' about Mith's CR dance?",
+        "options": ["Kritang CSE", "Vidit Jain", "So Bo", "Om Civil"],
+        "correct": 2
+    },
+    {
+        "question": "According to the statistical data, who sent the MOST total messages in the group?",
+        "options": ["Vidit Jain", "Vansh Jain", "Rishi Dalal", "Mith Jain"],
+        "correct": 3
+    },
+    {
+        "question": "Who has the LONGEST average message length according to the stats?",
+        "options": ["Vansh Jain", "Mith Jain", "Vidit Jain", "Kritang CSE"],
+        "correct": 0
+    },
+    {
+        "question": "Who said 'Istri pata nahi stri hai' when Vidit asked for an iron (istri)?",
+        "options": ["Kritang CSE", "Prinal Jain", "Mith Jain", "Rishi Dalal"],
+        "correct": 2
+    },
+    {
+        "question": "Who joked 'Mahavir at 12: bhai 2 baje trampoline jayenge, laser tag jayenge, hotel jayenge. Mahavir at 4: screw driver hai kya😂😂😂'?",
+        "options": ["Mith Jain", "Kritang CSE", "Vidit Jain", "Om Civil"],
+        "correct": 2
+    },
+    {
+        "question": "Who made the sarcastic comment 'Kaisa tha planetorium😂 Chandrayaan 2 ki landing dekhe aaye?😂' after missing the outing?",
+        "options": ["Mith Jain", "Kritang CSE", "Vidit Jain", "Prinal Jain"],
+        "correct": 2
+    },
+    {
+        "question": "According to the personality analysis, who is described as the 'Natural Social Glue' and primary organizer of the group?",
+        "options": ["Mith Jain", "Kritang CSE", "Vidit Jain", "Mahavir Khajanchi"],
+        "correct": 2
+    },
+    {
+        "question": "Who deleted the MOST messages according to the statistics?",
+        "options": ["Mith Jain", "Kritang CSE", "Prinal Jain", "Vansh Jain"],
+        "correct": 2
+    },
+    {
+        "question": "Who said 'Hence proved, CS is just a couple of gay guys!' in a funny conversation?",
+        "options": ["Vidit Jain", "Om Civil", "Prinal Jain", "Rishi Dalal"],
+        "correct": 2
+    },
+    {
+        "question": "Who gets repeatedly removed and added back to the group as a running joke?",
+        "options": ["Kritang CSE", "Prinal Jain", "Vidit Jain", "Mith Jain"],
+        "correct": 2
+    },
+    {
+        "question": "Who said 'Gwisiwkxijsnalaodhheneks' in the group (implying they were drunk)?",
+        "options": ["Vidit Jain", "Vansh Jain", "Rishi Dalal", "Om Civil"],
+        "correct": 2
+    },
+    {
+        "question": "Who said 'Saala mith poori time Vella baitha rehta hai' when Mith asked Vidit to come to food truck?",
+        "options": ["Kritang CSE", "Rishi Dalal", "Vidit Jain", "Om Civil"],
+        "correct": 2
+    },
+    {
+        "question": "Who sent the MOST emojis according to the statistics?",
+        "options": ["Mith Jain", "Rishi Dalal", "Vansh Jain", "Prinal Jain"],
+        "correct": 2
+    },
+    {
+        "question": "Who said 'Correction auntie 🗿👶🏼🫣' when Rishi mentioned going to impress a Meta PhD girl?",
+        "options": ["Mith Jain", "Vidit Jain", "Vansh Jain", "Kritang CSE"],
+        "correct": 2
+    },
+    {
+        "question": "Who edited the MOST messages according to the statistics?",
+        "options": ["Mith Jain", "Vidit Jain", "Kritang CSE", "Rishi Dalal"],
+        "correct": 2
+    },
+    {
+        "question": "Who said 'Doob ke mar jaa isme' when So Bo shared a picture of hot water ready for bathing?",
+        "options": ["Mith Jain", "Om Civil", "Vidit Jain", "Kritang CSE"],
+        "correct": 2
+    },
+    {
+        "question": "Who said 'Teri CR treat' as one of the first messages in the group?",
+        "options": ["Vidit Jain", "Mith Jain", "Kritang CSE", "Om Civil"],
+        "correct": 1
+    },
+    {
+        "question": "Who asked 'Is Friday ka plan karna hai kya kuch?' as their first message?",
+        "options": ["Vidit Jain", "Kritang CSE", "Rishi Dalal", "Mahavir Khajanchi"],
+        "correct": 1
+    },
+    {
+        "question": "Who said 'Shetty aana ko bhi daalde' as their first message in the group?",
+        "options": ["Saiyam Babel", "Vidit Jain", "Om Civil", "Shlok Shetty"],
+        "correct": 2
+    },
+    {
+        "question": "Who said 'Bhai mazaa aaya core roast aaj' and 'the bonding within teams❤️' after a Shaastra event?",
+        "options": ["Vidit Jain", "Rishi Dalal", "Om Civil", "Mith Jain"],
+        "correct": 2
+    },
+    {
+        "question": "Who said 'Vidit ravan' and 'Kumbhakaran' when joking about a Sri Lanka trip through Ram Setu?",
+        "options": ["Vansh Jain", "Mith Jain", "Kritang CSE", "Prinal Jain"],
+        "correct": 1
+    },
+    {
+        "question": "Who said 'Vansh kitna accha hai tu 😭🫶 Immediately upload kar diya' and offered to treat Vansh on Monday?",
+        "options": ["Vidit Jain", "Kritang CSE", "Mith Jain", "Rishi Dalal"],
+        "correct": 2
+    },
+    {
+        "question": "Who said 'Mess mein khana' when Vidit asked what's in the mess for lunch?",
+        "options": ["Kritang CSE", "Prinal Jain", "Mahavir Khajanchi", "Om Civil"],
+        "correct": 1
+    },
+    {
+        "question": "Who said 'Jisko bhi analog mein S aaya I will give treat' to Vansh and Saiyam?",
+        "options": ["Vidit Jain", "Kritang CSE", "Mith Jain", "Rishi Dalal"],
+        "correct": 2
+    },
+    {
+        "question": "Who said 'Quiz lite 💥💥' and 'Future dark 🕺🕺' before going to Fusilli despite having a quiz the next day?",
+        "options": ["Mith Jain", "Vansh Jain", "Rishi Dalal", "Kritang CSE"],
+        "correct": 1
+    },
+    {
+        "question": "Who said 'Elliot beach potato spring roll treat for all🥰 Marina bhi nhi leke jaa rha🤗' sarcastically?",
+        "options": ["Shlok Shetty", "Mahavir Khajanchi", "Om Civil", "Kritang CSE"],
+        "correct": 2
+    }
+];
 
         let currentQuestionIndex = 0;
         let score = 0;
